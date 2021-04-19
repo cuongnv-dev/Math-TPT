@@ -1,0 +1,42 @@
+name: math
+description: A new Flutter project.
+publish_to: "none"
+version: 0.4.1+12
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  audioplayers: ^0.15.0
+  cached_network_image: ^2.5.0
+  cupertino_icons: ^1.0.0
+  dotted_border: ^1.0.7
+  equatable: ^1.2.5
+  flare_flutter: ^2.0.6
+  flutter_svg: ^0.19.1
+  get: ^3.24.0
+  get_storage: ^1.4.0
+  google_fonts: ^1.1.1
+  hive: ^1.4.4+1
+  hive_flutter: ^0.3.1
+  keyboard_dismisser: ^1.0.2
+  path_provider: ^1.6.27
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  fonts:
+    - family: Coiny
+      fonts:
+        - asset: assets/font/Coiny-Regular.ttf
+  assets:
+    - assets/svg/
+    - assets/png/
+    - assets/animation/
+    - assets/
+    - google_fonts/
