@@ -9,6 +9,7 @@ import 'package:math/data/mock/object_constant.dart';
 import 'package:math/presentation/controller/compare_best_exe_controller.dart';
 import 'package:math/presentation/controller/compare_choice_exe_controller.dart';
 import 'package:math/presentation/controller/plus_choice_number_exe_controller.dart';
+import 'package:math/presentation/journeys/user_manual/campare_guide.dart';
 import 'package:math/presentation/widgets/back_button_widget.dart';
 import 'package:math/presentation/widgets/custom_container_widget.dart';
 import 'package:math/presentation/widgets/guide_button_widget.dart';
@@ -19,11 +20,6 @@ import '../../themes/theme_text.dart';
 
 //Todo: add single child scroll view
 class CompareBestAnswerScreen extends StatelessWidget {
-  void playSound(String sound) {
-    final player = AudioCache();
-    player.play(sound);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,9 +43,7 @@ class CompareBestAnswerScreen extends StatelessWidget {
             child: GetBuilder<CompareBestExeController>(
               init: CompareBestExeController(),
               builder: (_) {
-                String svgUrl = _.type.value != 'SM'
-                    ? ObjectConstant.fruits[5]
-                    : ObjectConstant.seaAnimals[_.object.value];
+                String svgUrl = ObjectConstant.fruits[_.object.value];
                 return Obx(
                   () => Column(
                     children: <Widget>[
@@ -85,7 +79,9 @@ class CompareBestAnswerScreen extends StatelessWidget {
                             borderRadius: 25,
                             onTap: () {},
                           ),
-                          GuideButtonWidget(),
+                          GuideButtonWidget(onTap: () {
+                            Get.to(CompareGuide());
+                          }),
                         ],
                       ),
                       SizedBox(
@@ -98,7 +94,7 @@ class CompareBestAnswerScreen extends StatelessWidget {
                               children: <Widget>[
                                 Expanded(
                                   flex: 5,
-                                  child: _.answerList[i] < 12
+                                  child: _.answerList[i] < 11
                                       ? ConstrainedBox(
                                           constraints: new BoxConstraints(
                                             minHeight: Sizes.dimen_40.h,
@@ -253,9 +249,6 @@ class CompareBestAnswerScreen extends StatelessWidget {
             borderRadius: 30,
             onTap: () {
               if (!_.next.value) {
-                String sound =
-                    _.correctIndex.value == i ? 'correct.mp3' : 'incorrect.mp3';
-                playSound(sound);
                 _.submitAnswer(i);
               }
             },
@@ -294,9 +287,6 @@ class CompareBestAnswerScreen extends StatelessWidget {
               : Colors.lightBlue[400],
           borderRadius: 30,
           onTap: () {
-            String sound =
-                _.correctIndex.value == i ? 'correct.mp3' : 'incorrect.mp3';
-            playSound(sound);
             if (!_.next.value) {
               print('abc');
               _.submitAnswer(i);

@@ -1,5 +1,4 @@
 import 'package:audioplayers/audio_cache.dart';
-import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -7,10 +6,12 @@ import 'package:math/common/constants/size_constants.dart';
 import 'package:math/common/routes/routers.dart';
 import 'package:math/data/mock/object_constant.dart';
 import 'package:math/presentation/controller/choice_number_exe_controller.dart';
+import 'package:math/presentation/journeys/user_manual/natural_number_guide.dart';
 import 'package:math/presentation/widgets/back_button_widget.dart';
 import 'package:math/presentation/widgets/custom_container_widget.dart';
 import 'package:math/presentation/widgets/guide_button_widget.dart';
 import 'package:math/presentation/widgets/result_screen.dart';
+import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import '../../../../../common/extensions/size_extensions.dart';
 import '../../../../themes/theme_text.dart';
 
@@ -22,8 +23,6 @@ class ChoiceNumberExerciseScreen extends StatefulWidget {
 
 class _ChoiceNumberExerciseScreenState
     extends State<ChoiceNumberExerciseScreen> {
-  AudioCache _audioCache;
-
   @override
   void initState() {
     super.initState();
@@ -81,7 +80,9 @@ class _ChoiceNumberExerciseScreenState
                             onTap: () {},
                           ),
                         ),
-                        GuideButtonWidget(),
+                        GuideButtonWidget(onTap: () {
+                          Get.to(NaturalNumberGuide());
+                        }),
                       ],
                     ),
                     Spacer(
@@ -107,9 +108,16 @@ class _ChoiceNumberExerciseScreenState
                     Spacer(
                       flex: 1,
                     ),
+                    _.next.value
+                        ? Image.asset('assets/animation/tenor_clap.gif',
+                            height: 100)
+                        : (_.showResult.value
+                            ? Image.asset('assets/animation/tenor.gif',
+                                height: 100)
+                            : Container()),
                     Obx(
                       () => Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
                           for (var i = 0; i < 3; i++)
                             !_.showResult.value
@@ -118,13 +126,10 @@ class _ChoiceNumberExerciseScreenState
                                     children: <Widget>[
                                       CustomContainer(
                                         childWidget: Center(
-                                          child: Text(
-                                            '${_.answerList[i]}',
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .whiteBoldHeadline3
-                                                .copyWith(),
-                                          ),
+                                          child: Text('${_.answerList[i]}',
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .whiteBoldHeadline3),
                                         ),
                                         outsideHeight: 80,
                                         insideHeight: 73,
@@ -133,11 +138,6 @@ class _ChoiceNumberExerciseScreenState
                                         insideColor: Colors.lightBlue[400],
                                         borderRadius: 30,
                                         onTap: () {
-                                          String sound =
-                                              _.correctIndex.value == i
-                                                  ? 'correct.mp3'
-                                                  : 'incorrect.mp3';
-                                          playSound(sound);
                                           if (!_.next.value) {
                                             _.submitAnswer(i);
                                           }
@@ -148,17 +148,6 @@ class _ChoiceNumberExerciseScreenState
                                   )
                                 : Stack(
                                     children: <Widget>[
-                                      _.selectedIndex.value == i
-                                          ? Positioned(
-                                              bottom: 60,
-                                              child: SvgPicture.asset(
-                                                _.correctIndex.value != i
-                                                    ? 'assets/svg/kitty-cry.svg'
-                                                    : 'assets/svg/kitty-win.svg',
-                                                width: Sizes.dimen_80.w,
-                                              ),
-                                            )
-                                          : Container(),
                                       Container(
                                         margin: EdgeInsets.only(top: 70),
                                         child: CustomContainer(
@@ -167,8 +156,7 @@ class _ChoiceNumberExerciseScreenState
                                               '${_.answerList[i]}',
                                               style: Theme.of(context)
                                                   .textTheme
-                                                  .whiteBoldHeadline3
-                                                  .copyWith(),
+                                                  .whiteBoldHeadline3,
                                             ),
                                           ),
                                           outsideHeight: 80,
@@ -189,11 +177,6 @@ class _ChoiceNumberExerciseScreenState
                                           borderRadius: 30,
                                           onTap: () {
                                             if (!_.next.value) {
-                                              String sound =
-                                                  _.correctIndex.value == i
-                                                      ? 'correct.mp3'
-                                                      : 'incorrect.mp3';
-                                              playSound(sound);
                                               _.submitAnswer(i);
                                             }
                                           },

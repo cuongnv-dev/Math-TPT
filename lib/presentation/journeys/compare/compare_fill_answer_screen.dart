@@ -10,6 +10,7 @@ import 'package:math/common/routes/routers.dart';
 import 'package:math/common/screenutil/screenutil.dart';
 import 'package:math/data/mock/object_constant.dart';
 import 'package:math/presentation/controller/compare_fill_exe_controller%20copy.dart';
+import 'package:math/presentation/journeys/user_manual/campare_guide.dart';
 import 'package:math/presentation/widgets/back_button_widget.dart';
 import 'package:math/presentation/widgets/custom_container_widget.dart';
 import 'package:math/presentation/widgets/guide_button_widget.dart';
@@ -19,11 +20,6 @@ import '../../../common/extensions/size_extensions.dart';
 import '../../themes/theme_text.dart';
 
 class CompareFillAnswerScreen extends StatelessWidget {
-  void playSound(String sound) {
-    final player = AudioCache();
-    player.play(sound);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -81,7 +77,9 @@ class CompareFillAnswerScreen extends StatelessWidget {
                             borderRadius: 25,
                             onTap: () {},
                           ),
-                          GuideButtonWidget(),
+                         GuideButtonWidget(onTap: () {
+                            Get.to(CompareGuide());
+                          }),
                         ],
                       ),
                       SizedBox(
@@ -195,9 +193,6 @@ class CompareFillAnswerScreen extends StatelessWidget {
                           ),
                           DragTarget<int>(
                             onAccept: (receivedItem) {
-                              receivedItem == _.correctIndex.value
-                                  ? playSound('correct.mp3')
-                                  : playSound('incorrect.mp3');
                               _.submitAnswer(receivedItem);
                             },
                             onWillAccept: (receivedItem) => true,

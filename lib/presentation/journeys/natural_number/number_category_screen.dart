@@ -120,7 +120,7 @@ class _NaturalNumberScreenState extends State<NaturalNumberScreen> {
                 child: Stack(
                   children: [
                     Container(
-                      height: 27.h,
+                      height: 55,
                       width: Sizes.dimen_150.w,
                       decoration: BoxDecoration(
                         color: Colors.orange[800],
@@ -128,7 +128,7 @@ class _NaturalNumberScreenState extends State<NaturalNumberScreen> {
                       ),
                     ),
                     Container(
-                      height: 24.h,
+                      height: 50,
                       width: Sizes.dimen_150.w,
                       decoration: BoxDecoration(
                         color: Colors.orange[400],

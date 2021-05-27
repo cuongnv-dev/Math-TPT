@@ -1,29 +1,20 @@
-import 'package:audioplayers/audio_cache.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:math/common/constants/size_constants.dart';
 import 'package:math/common/routes/routers.dart';
 import 'package:math/common/screenutil/screenutil.dart';
 import 'package:math/data/mock/object_constant.dart';
 import 'package:math/presentation/controller/division_fill_answer_exe_controlle.dart';
+import 'package:math/presentation/journeys/user_manual/orther_guide.dart';
 import 'package:math/presentation/widgets/back_button_widget.dart';
-import 'package:math/presentation/widgets/basket_widget_lg.dart';
 import 'package:math/presentation/widgets/custom_container_widget.dart';
 import 'package:math/presentation/widgets/guide_button_widget.dart';
-import 'package:math/presentation/widgets/large_number_widget.dart';
 import 'package:math/presentation/widgets/result_screen.dart';
 import '../../../../../common/extensions/size_extensions.dart';
 import '../../../../themes/theme_text.dart';
 
 class DivisionFillAnswerScreen extends StatelessWidget {
-  void playSound(String sound) {
-    final player = AudioCache();
-    player.play(sound);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -80,7 +71,9 @@ class DivisionFillAnswerScreen extends StatelessWidget {
                             borderRadius: 25,
                             onTap: () {},
                           ),
-                          GuideButtonWidget(),
+                          GuideButtonWidget(onTap: () {
+                            Get.to(OtherGuide());
+                          }),
                         ],
                       ),
                       SizedBox(
@@ -208,9 +201,15 @@ class DivisionFillAnswerScreen extends StatelessWidget {
                           buildNumber(_, context, 2),
                         ],
                       ),
-                      SizedBox(
-                        height: Sizes.dimen_20.h,
-                      ),
+                      _.next.value ? Spacer() : Container(),
+                      _.next.value
+                          ? Center(
+                              child: Image.asset(
+                                  'assets/animation/tenor_happy.gif',
+                                  height: 120),
+                            )
+                          : Container(),
+                      _.next.value ? Spacer() : Container(),
                       !_.next.value
                           ? Expanded(
                               child: Align(

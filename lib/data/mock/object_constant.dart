@@ -39,70 +39,62 @@ class ObjectConstant {
 
   static List<ObjectMockup> objList = [
     ObjectMockup(
-      image: "assets/svg/plus7a.svg",
-      background: "assets/svg/egg_basket.svg",
-    ),
-    ObjectMockup(
-      image: "assets/svg/strawberry.svg",
-      background: "assets/svg/plus17a.svg",
-    ),
-    ObjectMockup(
-      image: "assets/svg/plus14b.svg",
-      background: "assets/svg/plus14a.svg",
+      image: "assets/svg/flower1.svg",
+      background: "assets/svg/minusnew3.svg",
     ),
     ObjectMockup(
       image: "assets/svg/plus19b.svg",
       background: "assets/svg/plus19a.svg",
     ),
     ObjectMockup(
-      image: "assets/svg/minus2.svg",
-      background: "assets/svg/mul54.svg",
-    ),
-    ObjectMockup(
-      image: "assets/svg/orange.svg",
-      background: "assets/svg/basket.svg",
-    ),
-    ObjectMockup(
-      image: "assets/svg/div22b.svg",
-      background: "assets/svg/mul33.svg",
+      image: "assets/svg/minus12b.svg",
+      background: "assets/svg/minus12a.svg",
     ),
     ObjectMockup(
       image: "assets/svg/minus17b.svg",
       background: "assets/svg/minus17a.svg",
     ),
+    ObjectMockup(
+      image: "assets/svg/minusnew1b.svg",
+      background: "assets/svg/minusnew1a.svg",
+    ),
+    ObjectMockup(
+      image: "assets/svg/minus15b.svg",
+      background: "assets/svg/minus15a.svg",
+    ),
+    ObjectMockup(
+      image: "assets/svg/plus7a.svg",
+      background: "assets/svg/plusnew1.svg",
+    ),
+    ObjectMockup(
+      image: "assets/svg/minusnew1b.svg",
+      background: "assets/svg/minusnew1a.svg",
+    ),
   ];
   static List<ObjectMockup> divObjList = [
     ObjectMockup(
-      image: "assets/svg/div27a.svg",
-      background: "assets/svg/egg_basket.svg",
-    ),
-    ObjectMockup(
-      image: "assets/svg/div29a.svg",
-      background: "assets/svg/plus14a.svg",
-    ),
-    ObjectMockup(
-      image: "assets/svg/div38a.svg",
-      background: "assets/svg/plus17a.svg",
-    ),
-    ObjectMockup(
-      image: "assets/svg/div45a.svg",
-      background: "assets/svg/mul54.svg",
-    ),
-    ObjectMockup(
-      image: "assets/svg/div44a.svg",
-      background: "assets/svg/div44b.svg",
+      image: "assets/svg/div22a.svg",
+      background: "assets/svg/minusnew3.svg",
     ),
     ObjectMockup(
       image: "assets/svg/div48a.svg",
       background: "assets/svg/div48b.svg",
     ),
     ObjectMockup(
-      image: "assets/svg/div27a.svg",
-      background: "assets/svg/mul51.svg",
+      background: "assets/svg/div44b.svg",
+      image: "assets/svg/div44a.svg",
     ),
     ObjectMockup(
-      image: "assets/svg/div43a.svg",
-      background: "assets/svg/div43b.svg",
+      background: "assets/svg/div43new.svg",
+      image: "assets/svg/div38a.svg",
+    ),
+    ObjectMockup(
+      background: "assets/svg/plus19a.svg",
+      image: "assets/svg/div38a.svg",
+    ),
+    ObjectMockup(
+      background: "assets/svg/plusnew2a.svg",
+      image: "assets/svg/div59anew.svg",
     ),
   ];
 

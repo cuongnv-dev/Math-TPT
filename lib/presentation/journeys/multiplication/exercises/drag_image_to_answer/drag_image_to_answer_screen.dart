@@ -8,6 +8,7 @@ import 'package:math/common/routes/routers.dart';
 import 'package:math/common/screenutil/screenutil.dart';
 import 'package:math/data/mock/object_constant.dart';
 import 'package:math/presentation/controller/multiplication_drag_image_to_answer_controller.dart';
+import 'package:math/presentation/journeys/user_manual/orther_guide.dart';
 import 'package:math/presentation/widgets/back_button_widget.dart';
 import 'package:math/presentation/widgets/custom_container_widget.dart';
 import 'package:math/presentation/widgets/guide_button_widget.dart';
@@ -72,7 +73,9 @@ class MultiplicationDragAnswerToImage extends StatelessWidget {
                             borderRadius: 25,
                             onTap: () {},
                           ),
-                          GuideButtonWidget(),
+                          GuideButtonWidget(onTap: () {
+                            Get.to(OtherGuide());
+                          }),
                         ],
                       ),
                       SizedBox(

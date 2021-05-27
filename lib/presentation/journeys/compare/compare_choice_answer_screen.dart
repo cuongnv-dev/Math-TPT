@@ -8,6 +8,7 @@ import 'package:math/common/screenutil/screenutil.dart';
 import 'package:math/data/mock/object_constant.dart';
 import 'package:math/presentation/controller/compare_choice_exe_controller.dart';
 import 'package:math/presentation/controller/plus_choice_number_exe_controller.dart';
+import 'package:math/presentation/journeys/user_manual/campare_guide.dart';
 import 'package:math/presentation/widgets/back_button_widget.dart';
 import 'package:math/presentation/widgets/basket_widget.dart';
 import 'package:math/presentation/widgets/custom_container_widget.dart';
@@ -19,11 +20,6 @@ import '../../themes/theme_text.dart';
 
 //Todo: add single child scroll view
 class CompareChoiceAnswerScreen extends StatelessWidget {
-  void playSound(String sound) {
-    final player = AudioCache();
-    player.play(sound);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -82,7 +78,9 @@ class CompareChoiceAnswerScreen extends StatelessWidget {
                             borderRadius: 25,
                             onTap: () {},
                           ),
-                          GuideButtonWidget(),
+                          GuideButtonWidget(onTap: () {
+                            Get.to(CompareGuide());
+                          }),
                         ],
                       ),
                       SizedBox(
@@ -185,6 +183,13 @@ class CompareChoiceAnswerScreen extends StatelessWidget {
                         ],
                       ),
                       Spacer(),
+                      _.next.value
+                          ? Image.asset('assets/animation/tenor_clap.gif',
+                              height: 80)
+                          : (_.showResult.value
+                              ? Image.asset('assets/animation/tenor.gif',
+                                  height: 80)
+                              : Container()),
                       Obx(
                         () => Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -208,11 +213,6 @@ class CompareChoiceAnswerScreen extends StatelessWidget {
                                           insideColor: Colors.lightBlue[400],
                                           borderRadius: 30,
                                           onTap: () {
-                                            String sound =
-                                                _.correctIndex.value == i
-                                                    ? 'correct.mp3'
-                                                    : 'incorrect.mp3';
-                                            playSound(sound);
                                             if (!_.next.value) {
                                               _.submitAnswer(i);
                                             }
@@ -223,25 +223,16 @@ class CompareChoiceAnswerScreen extends StatelessWidget {
                                     )
                                   : Stack(
                                       children: <Widget>[
-                                        _.selectedIndex.value == i
-                                            ? Positioned(
-                                                bottom: 60,
-                                                child: SvgPicture.asset(
-                                                  _.correctIndex.value != i
-                                                      ? 'assets/svg/kitty-cry.svg'
-                                                      : 'assets/svg/kitty-win.svg',
-                                                  width: Sizes.dimen_80.w,
-                                                ),
-                                              )
-                                            : Container(),
                                         Container(
                                           margin: EdgeInsets.only(top: 70),
                                           child: CustomContainer(
                                             childWidget: Center(
-                                              child: Text('${_.answerList[i]}',
-                                                  style: Theme.of(context)
-                                                      .textTheme
-                                                      .whiteBoldHeadline3),
+                                              child: Text(
+                                                '${_.answerList[i]}',
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .whiteBoldHeadline3,
+                                              ),
                                             ),
                                             outsideHeight: 80,
                                             insideHeight: 73,
@@ -261,11 +252,6 @@ class CompareChoiceAnswerScreen extends StatelessWidget {
                                             borderRadius: 30,
                                             onTap: () {
                                               if (!_.next.value) {
-                                                String sound =
-                                                    _.correctIndex.value == i
-                                                        ? 'correct.mp3'
-                                                        : 'incorrect.mp3';
-                                                playSound(sound);
                                                 _.submitAnswer(i);
                                               }
                                             },

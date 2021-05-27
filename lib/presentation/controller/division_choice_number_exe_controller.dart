@@ -54,7 +54,7 @@ class DivisionChoiceNumberExerciseController extends GetxController {
       }
     }
     answerList.shuffle();
-    object.value = Helper.getRandomNum(0, 8);
+    object.value = Helper.getRandomNum(0, 6);
     correctIndex.value = answerList.indexOf(question.value / max);
 
     update();

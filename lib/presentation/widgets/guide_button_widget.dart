@@ -3,16 +3,14 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
 class GuideButtonWidget extends StatelessWidget {
-  const GuideButtonWidget({
-    Key key,
-  }) : super(key: key);
+  final Function onTap;
+
+  const GuideButtonWidget({Key key, this.onTap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        Get.back();
-      },
+      onTap: onTap != null ? onTap : null,
       child: Stack(
         children: [
           Container(

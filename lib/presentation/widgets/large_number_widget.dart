@@ -40,7 +40,10 @@ class LargeNumWidget extends StatelessWidget {
           alignment: WrapAlignment.center,
           children: [
             for (var i = 0; i < basketCount; i++)
-              BasketWiget(svg: parentSvg, text: '10'),
+              Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: BasketWiget(svg: parentSvg, text: '10'),
+              ),
             Container(
               padding: EdgeInsets.only(top: 10),
               child: Wrap(

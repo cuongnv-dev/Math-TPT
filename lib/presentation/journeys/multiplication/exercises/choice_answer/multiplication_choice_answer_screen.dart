@@ -1,4 +1,3 @@
-import 'package:audioplayers/audio_cache.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -6,8 +5,8 @@ import 'package:math/common/constants/size_constants.dart';
 import 'package:math/common/routes/routers.dart';
 import 'package:math/common/screenutil/screenutil.dart';
 import 'package:math/data/mock/object_constant.dart';
-import 'package:math/presentation/controller/minus_choice_number_exe_controller.dart';
 import 'package:math/presentation/controller/multiplication_choice_number_exe_controller.dart';
+import 'package:math/presentation/journeys/user_manual/orther_guide.dart';
 import 'package:math/presentation/widgets/back_button_widget.dart';
 import 'package:math/presentation/widgets/custom_container_widget.dart';
 import 'package:math/presentation/widgets/guide_button_widget.dart';
@@ -16,11 +15,6 @@ import '../../../../../common/extensions/size_extensions.dart';
 import '../../../../themes/theme_text.dart';
 
 class MultiplicationChoiceAnswerScreen extends StatelessWidget {
-  void playSound(String sound) {
-    final player = AudioCache();
-    player.play(sound);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,7 +71,9 @@ class MultiplicationChoiceAnswerScreen extends StatelessWidget {
                             borderRadius: 25,
                             onTap: () {},
                           ),
-                          GuideButtonWidget(),
+                           GuideButtonWidget(onTap: () {
+                            Get.to(OtherGuide());
+                          }),
                         ],
                       ),
                       SizedBox(
@@ -137,6 +133,15 @@ class MultiplicationChoiceAnswerScreen extends StatelessWidget {
                             .copyWith(height: 1),
                       ),
                       Spacer(),
+                      Get.arguments['type'] < 5
+                          ? (_.next.value
+                              ? Image.asset('assets/animation/tenor_clap.gif',
+                                  height: 80)
+                              : (_.showResult.value
+                                  ? Image.asset('assets/animation/tenor.gif',
+                                      height: 80)
+                                  : Container()))
+                          : Container(),
                       newMethod(_, context),
                       SizedBox(
                         height: Sizes.dimen_10.h,
@@ -222,10 +227,6 @@ class MultiplicationChoiceAnswerScreen extends StatelessWidget {
                         insideColor: Colors.lightBlue[400],
                         borderRadius: 30,
                         onTap: () {
-                          String sound = _.correctIndex.value == i
-                              ? 'correct.mp3'
-                              : 'incorrect.mp3';
-                          playSound(sound);
                           if (!_.next.value) {
                             _.submitAnswer(i);
                           }
@@ -263,10 +264,6 @@ class MultiplicationChoiceAnswerScreen extends StatelessWidget {
                           borderRadius: 30,
                           onTap: () {
                             if (!_.next.value) {
-                              String sound = _.correctIndex.value == i
-                                  ? 'correct.mp3'
-                                  : 'incorrect.mp3';
-                              playSound(sound);
                               _.submitAnswer(i);
                             }
                           },

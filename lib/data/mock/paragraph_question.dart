@@ -7,6 +7,7 @@ class ParagraphQuestion {
   final dynamic image;
   final List<int> nums;
   final bool excep;
+  final String note;
 
   ParagraphQuestion({
     @required this.title,
@@ -15,6 +16,7 @@ class ParagraphQuestion {
     @required this.image,
     this.nums,
     this.excep,
+    this.note,
   })  : assert(title != "", 'title cannot be null'),
         assert(subTitle != "", 'subTitle cannot be null'),
         assert(unit != "", 'unit cannot be null'),

@@ -14,14 +14,14 @@ class BasketWiget extends StatelessWidget {
       children: [
         SvgPicture.asset(
           svg != null ? svg : ObjectConstant.divisionList[0].image,
-          height: 60,
+          height: 50,
         ),
         Positioned.fill(
           child: Align(
             alignment: Alignment.bottomCenter,
             child: Container(
               width: 30,
-              height: 18,
+              height: 16,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30), color: Colors.white),
               child: Center(

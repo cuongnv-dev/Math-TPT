@@ -6,6 +6,7 @@ import 'package:math/common/constants/size_constants.dart';
 import 'package:math/common/routes/routers.dart';
 import 'package:math/common/screenutil/screenutil.dart';
 import 'package:math/presentation/controller/fill_number_inside_array_exe_controlle.dart';
+import 'package:math/presentation/journeys/user_manual/natural_number_guide.dart';
 import 'package:math/presentation/widgets/back_button_widget.dart';
 import 'package:math/presentation/widgets/custom_container_widget.dart';
 import 'package:math/presentation/widgets/guide_button_widget.dart';
@@ -80,7 +81,9 @@ class FillNumberInsideArrayScreen extends StatelessWidget {
                           onTap: () {},
                         ),
                       ),
-                      GuideButtonWidget(),
+                      GuideButtonWidget(onTap: () {
+                          Get.to(NaturalNumberGuide());
+                        }),
                     ],
                   ),
                   SizedBox(height: Sizes.padding_vertical.h * 3),
@@ -91,23 +94,20 @@ class FillNumberInsideArrayScreen extends StatelessWidget {
                         buildNumber(_, context, size, innerSize, i)
                     ],
                   ),
-                  SizedBox(height: Sizes.padding_vertical.h),
+                  // SizedBox(height: Sizes.padding_vertical.h),
+                  Spacer(),
                   Obx(
                     () => Container(
-                      child: _.showResult.value
-                          ? (_.next.value
-                              ? Center(
-                                  child: Image.asset(
-                                      'assets/animation/tenor_happy.gif',
-                                      height: 120),
-                                )
-                              : Image.asset('assets/animation/tenor.gif',
-                                  height: 120))
-                          : SizedBox(
-                              height: 40,
-                            ),
+                      child: _.next.value
+                          ? Image.asset('assets/animation/tenor_clap.gif',
+                              height: 100)
+                          : (_.showResult.value
+                              ? Image.asset('assets/animation/tenor.gif',
+                                  height: 100)
+                              : Container()),
                     ),
                   ),
+                  // Spacer(),
                   !_.next.value
                       ? Expanded(
                           child: Align(

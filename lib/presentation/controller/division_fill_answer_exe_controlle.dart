@@ -58,7 +58,7 @@ class DivisionFillAnswerController extends GetxController {
     }
     resultList.addAll([question.value, max, (question.value / max).round()]);
 
-    object.value = Helper.getRandomNum(0, 8);
+    object.value = Helper.getRandomNum(0, 6);
     borderList.addAll([-1, -1, -1]);
     answerList.addAll([0, 0, 0]);
     if (questionCount.value < 6) {

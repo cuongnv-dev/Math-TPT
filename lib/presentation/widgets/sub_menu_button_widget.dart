@@ -34,7 +34,7 @@ class SubMenuButtonWidget extends StatelessWidget {
               right: Sizes.dimen_24.w,
             ),
             width: double.infinity,
-            height: 27.h,
+            height: 55,
             decoration: BoxDecoration(
               color: selected ? Colors.green[700] : outsideColor,
               borderRadius: BorderRadius.circular(15),
@@ -47,7 +47,7 @@ class SubMenuButtonWidget extends StatelessWidget {
               right: Sizes.dimen_24.w,
             ),
             width: double.infinity,
-            height: 24.h,
+            height: 48,
             decoration: BoxDecoration(
               color: selected ? Colors.green[400] : insideColor,
               borderRadius: BorderRadius.circular(15),

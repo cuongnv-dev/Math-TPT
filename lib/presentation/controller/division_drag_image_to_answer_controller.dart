@@ -63,9 +63,7 @@ class DivisionDragImageToAnswerController extends GetxController {
 
     answerList.shuffle();
 
-    object.value = Helper.getRandomNum(0, 8);
-
-    object.value = 4;
+    object.value = Helper.getRandomNum(0, 6);
     correctIndex.value =
         answerList.indexOf('${question.value} : $max = $res=res');
     answerList[correctIndex.value] = '${question.value} : $max = $res';

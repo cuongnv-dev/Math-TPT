@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:math/common/constants/size_constants.dart';
 import 'package:math/presentation/journeys/home/home_screen.dart';
+import 'package:math/presentation/journeys/user_manual/index.dart';
 import '../../common/extensions/size_extensions.dart';
 import '../themes/theme_text.dart';
 import 'package:get/get.dart';
@@ -90,7 +91,9 @@ class _IndexScreenState extends State<IndexScreen> {
               ),
               SizedBox(height: Sizes.padding_vertical.h),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Get.to(UserManual());
+                },
                 child: Stack(
                   children: [
                     Container(

@@ -1,4 +1,3 @@
-import 'package:audioplayers/audio_cache.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -7,6 +6,7 @@ import 'package:math/common/routes/routers.dart';
 import 'package:math/common/screenutil/screenutil.dart';
 import 'package:math/data/mock/object_constant.dart';
 import 'package:math/presentation/controller/fill_number_inside_blank_exe_controlle.dart';
+import 'package:math/presentation/journeys/user_manual/natural_number_guide.dart';
 import 'package:math/presentation/widgets/back_button_widget.dart';
 import 'package:math/presentation/widgets/custom_container_widget.dart';
 import 'package:math/presentation/widgets/guide_button_widget.dart';
@@ -15,11 +15,6 @@ import '../../../../../common/extensions/size_extensions.dart';
 import '../../../../themes/theme_text.dart';
 
 class FillNumberInsideBlankScreen extends StatelessWidget {
-  void playSound(String sound) {
-    final player = AudioCache();
-    player.play(sound);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,7 +67,9 @@ class FillNumberInsideBlankScreen extends StatelessWidget {
                           borderRadius: 25,
                           onTap: () {},
                         ),
-                        GuideButtonWidget(),
+                         GuideButtonWidget(onTap: () {
+                          Get.to(NaturalNumberGuide());
+                        }),
                       ],
                     ),
                     SizedBox(
@@ -136,6 +133,14 @@ class FillNumberInsideBlankScreen extends StatelessWidget {
                           SizedBox(height: Sizes.padding_vertical.h),
                         ],
                       ),
+                    Spacer(),
+                    _.next.value
+                        ? Image.asset('assets/animation/tenor_clap.gif',
+                            height: 80)
+                        : (_.showResult.value
+                            ? Image.asset('assets/animation/tenor.gif',
+                                height: 80)
+                            : Container()),
                     !_.next.value
                         ? Expanded(
                             child: Align(

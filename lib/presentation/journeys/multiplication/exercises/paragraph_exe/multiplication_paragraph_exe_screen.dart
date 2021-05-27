@@ -7,6 +7,7 @@ import 'package:math/common/screenutil/screenutil.dart';
 import 'package:math/data/mock/paragraph_question.dart';
 import 'package:math/data/mock/paragraph_question_constant.dart';
 import 'package:math/presentation/controller/multiplication_paragraph_exe_controller.dart';
+import 'package:math/presentation/journeys/user_manual/orther_guide.dart';
 import 'package:math/presentation/widgets/back_button_widget.dart';
 import 'package:math/presentation/widgets/custom_container_widget.dart';
 import 'package:math/presentation/widgets/guide_button_widget.dart';
@@ -95,7 +96,9 @@ class MultiplicationParagraphExeScreen extends StatelessWidget {
                                 onTap: () {},
                               ),
                             ),
-                            GuideButtonWidget(),
+                            GuideButtonWidget(onTap: () {
+                              Get.to(OtherGuide());
+                            }),
                           ],
                         ),
                       ),
@@ -171,17 +174,6 @@ class MultiplicationParagraphExeScreen extends StatelessWidget {
                       SizedBox(
                         height: Sizes.padding_vertical.h * 2,
                       ),
-                      Text(
-                        'Giải:',
-                        style: Theme.of(context).textTheme.whiteSubtitle1,
-                      ),
-                      Text(
-                        tmpObj.subTitle,
-                        style:
-                            Theme.of(context).textTheme.whiteSubtitle1.copyWith(
-                                  fontWeight: FontWeight.normal,
-                                ),
-                      ),
                       SizedBox(height: Sizes.padding_vertical.h),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -212,16 +204,6 @@ class MultiplicationParagraphExeScreen extends StatelessWidget {
                                 ),
                           ),
                           buildNumber(_, context, 2),
-                          Text(
-                            "(${tmpObj.unit})",
-                            style: Theme.of(context)
-                                .textTheme
-                                .boldSubtitle1
-                                .copyWith(
-                                  fontWeight: FontWeight.normal,
-                                  color: Colors.white,
-                                ),
-                          ),
                         ],
                       ),
                       SizedBox(height: Sizes.padding_vertical.h),
@@ -229,24 +211,22 @@ class MultiplicationParagraphExeScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            'Đáp số:',
-                            style: Theme.of(context)
-                                .textTheme
-                                .boldSubtitle1
-                                .copyWith(
-                                    fontWeight: FontWeight.normal,
-                                    color: Colors.white),
+                            tmpObj.subTitle,
+                            style:
+                                Theme.of(context).textTheme.bodyText2.copyWith(
+                                      fontWeight: FontWeight.normal,
+                                      color: Colors.white,
+                                    ),
                           ),
                           buildNumber(_, context, 3),
-                          Text(
-                            tmpObj.unit,
-                            style: Theme.of(context)
-                                .textTheme
-                                .boldSubtitle1
-                                .copyWith(
-                                    fontWeight: FontWeight.normal,
-                                    color: Colors.white),
-                          ),
+                          // Text(
+                          //   "${tmpObj.unit}",
+                          //   style:
+                          //       Theme.of(context).textTheme.bodyText2.copyWith(
+                          //             fontWeight: FontWeight.normal,
+                          //             color: Colors.white,
+                          //           ),
+                          // ),
                         ],
                       ),
                       SizedBox(height: Sizes.padding_vertical.h * 3),

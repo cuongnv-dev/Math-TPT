@@ -9,6 +9,7 @@ import 'package:math/data/mock/paragraph_question.dart';
 import 'package:math/data/mock/paragraph_question_constant.dart';
 
 import 'package:math/presentation/controller/plus_paragraph_exe_controller.dart';
+import 'package:math/presentation/journeys/user_manual/orther_guide.dart';
 import 'package:math/presentation/widgets/back_button_widget.dart';
 import 'package:math/presentation/widgets/custom_container_widget.dart';
 import 'package:math/presentation/widgets/guide_button_widget.dart';
@@ -30,7 +31,7 @@ class PlusParagraphExeScreen extends StatelessWidget {
           ),
         ),
         child: Container(
-          color: Colors.black.withOpacity(0.4),
+          color: Colors.black.withOpacity(0.6),
           height: double.infinity,
           padding: EdgeInsets.only(
             left: Sizes.padding_horizontal.w,
@@ -42,7 +43,6 @@ class PlusParagraphExeScreen extends StatelessWidget {
             builder: (_) {
               ParagraphQuestion object =
                   ParagraphQuestionConstant.listPlus[_.question.value - 1];
-              print('object $object');
               return Obx(
                 () => SafeArea(
                   child: SingleChildScrollView(
@@ -81,7 +81,9 @@ class PlusParagraphExeScreen extends StatelessWidget {
                                   onTap: () {},
                                 ),
                               ),
-                              GuideButtonWidget(),
+                              GuideButtonWidget(onTap: () {
+                                Get.to(OtherGuide());
+                              }),
                             ],
                           ),
                         ),
@@ -109,7 +111,7 @@ class PlusParagraphExeScreen extends StatelessWidget {
                                     .listPlus[_.question.value - 1].title,
                                 style: Theme.of(context)
                                     .textTheme
-                                    .bodyText1
+                                    .subtitle2
                                     .copyWith(color: Colors.white),
                               ),
                               SizedBox(height: Sizes.padding_vertical.h),
@@ -139,11 +141,17 @@ class PlusParagraphExeScreen extends StatelessWidget {
                                               parentSvg: object.image[0],
                                             )),
                                   Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: SvgPicture.asset(
-                                      'assets/svg/plus.svg',
-                                      color: Colors.white,
-                                      height: 20,
+                                    padding: const EdgeInsets.all(5.0),
+                                    child: Text(
+                                      ParagraphQuestionConstant
+                                          .listPlus[_.question.value - 1].note,
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodyText2
+                                          .copyWith(
+                                            fontWeight: FontWeight.normal,
+                                            color: Colors.white,
+                                          ),
                                     ),
                                   ),
                                   Expanded(
@@ -181,21 +189,6 @@ class PlusParagraphExeScreen extends StatelessWidget {
                         SizedBox(
                           height: Sizes.padding_vertical.h * 2,
                         ),
-                        Text(
-                          'Giải:',
-                          style: Theme.of(context).textTheme.whiteBodyText1,
-                        ),
-                        Text(
-                          ParagraphQuestionConstant
-                              .listPlus[_.question.value - 1].subTitle,
-                          style: Theme.of(context)
-                              .textTheme
-                              .whiteBodyText1
-                              .copyWith(
-                                fontWeight: FontWeight.normal,
-                              ),
-                        ),
-                        SizedBox(height: Sizes.padding_vertical.h),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -225,42 +218,34 @@ class PlusParagraphExeScreen extends StatelessWidget {
                                   ),
                             ),
                             buildNumber(_, context, 2),
+                          ],
+                        ),
+                        SizedBox(height: Sizes.padding_vertical.h * 2),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
                             Text(
-                              "(${ParagraphQuestionConstant.listPlus[_.question.value - 1].unit})",
+                              ParagraphQuestionConstant
+                                  .listPlus[_.question.value - 1].subTitle,
                               style: Theme.of(context)
                                   .textTheme
-                                  .bodyText1
+                                  .bodyText2
                                   .copyWith(
                                     fontWeight: FontWeight.normal,
                                     color: Colors.white,
                                   ),
                             ),
-                          ],
-                        ),
-                        SizedBox(height: Sizes.padding_vertical.h),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Đáp số:',
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyText1
-                                  .copyWith(
-                                      fontWeight: FontWeight.normal,
-                                      color: Colors.white),
-                            ),
                             buildNumber(_, context, 3),
-                            Text(
-                              ParagraphQuestionConstant
-                                  .listPlus[_.question.value - 1].unit,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyText1
-                                  .copyWith(
-                                      fontWeight: FontWeight.normal,
-                                      color: Colors.white),
-                            ),
+                            // Text(
+                            //   "${ParagraphQuestionConstant.listPlus[_.question.value - 1].unit}",
+                            //   style: Theme.of(context)
+                            //       .textTheme
+                            //       .bodyText2
+                            //       .copyWith(
+                            //         fontWeight: FontWeight.normal,
+                            //         color: Colors.white,
+                            //       ),
+                            // ),
                           ],
                         ),
                         SizedBox(height: Sizes.padding_vertical.h * 3),

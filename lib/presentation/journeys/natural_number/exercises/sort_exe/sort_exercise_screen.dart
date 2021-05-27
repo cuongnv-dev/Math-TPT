@@ -11,6 +11,7 @@ import 'package:math/common/screenutil/screenutil.dart';
 import 'package:math/data/mock/object_constant.dart';
 import 'package:math/presentation/controller/plus_drag_image_to_answer_controller.dart';
 import 'package:math/presentation/controller/sort_exercise_controller.dart';
+import 'package:math/presentation/journeys/user_manual/natural_number_guide.dart';
 import 'package:math/presentation/widgets/back_button_widget.dart';
 import 'package:math/presentation/widgets/custom_container_widget.dart';
 import 'package:math/presentation/widgets/guide_button_widget.dart';
@@ -20,10 +21,6 @@ import '../../../../themes/theme_text.dart';
 
 class SortExerciseScreen extends StatelessWidget {
   List<int> answers = [-1, -1, -1, -1];
-  void playSound(String sound) {
-    final player = AudioCache();
-    player.play(sound);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +41,7 @@ class SortExerciseScreen extends StatelessWidget {
             padding: EdgeInsets.only(
               left: Sizes.padding_horizontal.w,
               right: Sizes.padding_horizontal.w,
-              bottom: Sizes.padding_vertical.h * 3,
+              bottom: Sizes.padding_vertical.h,
             ),
             color: Colors.black.withOpacity(0.5),
             child: GetBuilder<SortExerciseController>(
@@ -85,12 +82,12 @@ class SortExerciseScreen extends StatelessWidget {
                             borderRadius: 25,
                             onTap: () {},
                           ),
-                          GuideButtonWidget(),
+                          GuideButtonWidget(onTap: () {
+                            Get.to(NaturalNumberGuide());
+                          }),
                         ],
                       ),
-                      SizedBox(
-                        height: ScreenUtil.screenHeight * 0.2,
-                      ),
+                      Spacer(),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
@@ -149,21 +146,18 @@ class SortExerciseScreen extends StatelessWidget {
                             ),
                         ],
                       ),
-                      SizedBox(height: ScreenUtil.screenHeight * 0.3),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          for (var i = 0; i < 4; i++)
-                            buildDraggable(i, _, context, dimen)
-                        ],
-                      ),
                       Spacer(),
+                      _.next.value
+                          ? Image.asset('assets/animation/tenor_clap.gif',
+                              height: 100)
+                          : Container(),
+                      SizedBox(height: Sizes.padding_vertical.h * 2),
                       _.next.value
                           ? GestureDetector(
                               onTap: () {
                                 if (_.questionCount.value < 10) {
                                   answers = [-1, -1, -1, -1];
-                                  playSound('correct.mp3');
+                                  // playSound('correct.mp3');
                                   _.generateNewQuestion();
                                 } else {
                                   Get.off(ResultScreen(
@@ -193,25 +187,31 @@ class SortExerciseScreen extends StatelessWidget {
                                       borderRadius: BorderRadius.circular(20),
                                     ),
                                     child: Center(
-                                       child: _.questionCount.value ==10
-                                    ? Text(
-                                        'Xem điểm',
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .whiteSubtitle1
-                                            .copyWith(),
-                                      )
-                                    : SvgPicture.asset(
-                                        'assets/svg/arrow-right.svg',
-                                        color: Colors.white,
-                                        height: 30,
-                                      ),
+                                      child: _.questionCount.value == 10
+                                          ? Text(
+                                              'Xem điểm',
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .whiteSubtitle1
+                                                  .copyWith(),
+                                            )
+                                          : SvgPicture.asset(
+                                              'assets/svg/arrow-right.svg',
+                                              color: Colors.white,
+                                              height: 30,
+                                            ),
                                     ),
                                   ),
                                 ],
                               ),
                             )
-                          : Container(),
+                          : Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                for (var i = 0; i < 4; i++)
+                                  buildDraggable(i, _, context, dimen)
+                              ],
+                            ),
                     ],
                   ),
                 );

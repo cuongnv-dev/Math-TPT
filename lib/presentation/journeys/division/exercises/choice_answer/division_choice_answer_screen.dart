@@ -1,4 +1,3 @@
-import 'package:audioplayers/audio_cache.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -7,22 +6,15 @@ import 'package:math/common/routes/routers.dart';
 import 'package:math/common/screenutil/screenutil.dart';
 import 'package:math/data/mock/object_constant.dart';
 import 'package:math/presentation/controller/division_choice_number_exe_controller.dart';
+import 'package:math/presentation/journeys/user_manual/orther_guide.dart';
 import 'package:math/presentation/widgets/back_button_widget.dart';
-import 'package:math/presentation/widgets/basket_widget.dart';
-import 'package:math/presentation/widgets/basket_widget_lg.dart';
 import 'package:math/presentation/widgets/custom_container_widget.dart';
 import 'package:math/presentation/widgets/guide_button_widget.dart';
-import 'package:math/presentation/widgets/large_number_widget.dart';
 import 'package:math/presentation/widgets/result_screen.dart';
 import '../../../../../common/extensions/size_extensions.dart';
 import '../../../../themes/theme_text.dart';
 
 class DivisionChoiceAnswerScreen extends StatelessWidget {
-  void playSound(String sound) {
-    final player = AudioCache();
-    player.play(sound);
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,7 +71,9 @@ class DivisionChoiceAnswerScreen extends StatelessWidget {
                             borderRadius: 25,
                             onTap: () {},
                           ),
-                          GuideButtonWidget(),
+                          GuideButtonWidget(onTap: () {
+                            Get.to(OtherGuide());
+                          }),
                         ],
                       ),
                       SizedBox(
@@ -193,6 +187,13 @@ class DivisionChoiceAnswerScreen extends StatelessWidget {
                             .copyWith(height: 1),
                       ),
                       Spacer(),
+                      _.next.value
+                          ? Image.asset('assets/animation/tenor_clap.gif',
+                              height: 100)
+                          : (_.showResult.value
+                              ? Image.asset('assets/animation/tenor.gif',
+                                  height: 100)
+                              : Container()),
                       newMethod(_, context),
                       SizedBox(
                         height: Sizes.dimen_10.h,
@@ -276,10 +277,6 @@ class DivisionChoiceAnswerScreen extends StatelessWidget {
                         insideColor: Colors.lightBlue[400],
                         borderRadius: 30,
                         onTap: () {
-                          String sound = _.correctIndex.value == i
-                              ? 'correct.mp3'
-                              : 'incorrect.mp3';
-                          playSound(sound);
                           if (!_.next.value) {
                             _.submitAnswer(i);
                           }
@@ -317,10 +314,6 @@ class DivisionChoiceAnswerScreen extends StatelessWidget {
                           borderRadius: 30,
                           onTap: () {
                             if (!_.next.value) {
-                              String sound = _.correctIndex.value == i
-                                  ? 'correct.mp3'
-                                  : 'incorrect.mp3';
-                              playSound(sound);
                               _.submitAnswer(i);
                             }
                           },

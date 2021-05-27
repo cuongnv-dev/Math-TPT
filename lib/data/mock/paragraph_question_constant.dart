@@ -12,6 +12,7 @@ class ParagraphQuestionConstant {
       subTitle: "Số bóng hai bạn có tất cả là:",
       unit: "bóng ",
       nums: [4, 2, 6],
+      note: "cả hai",
     ),
 
     ParagraphQuestion(
@@ -24,6 +25,7 @@ class ParagraphQuestionConstant {
       subTitle: "Số kẹo Hoa có tất cả là:",
       unit: "cái kẹo",
       nums: [6, 3, 9],
+      note: "cho thêm",
     ),
 
     ParagraphQuestion(
@@ -36,6 +38,7 @@ class ParagraphQuestionConstant {
       subTitle: "Số quyển vở Trang có tất cả là:",
       unit: "quyển vở",
       nums: [3, 5, 8],
+      note: "nhiều hơn",
     ),
 
     ParagraphQuestion(
@@ -48,6 +51,7 @@ class ParagraphQuestionConstant {
       subTitle: "Vườn nhà Thúy có số cây tất cả là:",
       unit: "cây",
       nums: [6, 1, 7],
+      note: "và",
     ),
 
     ParagraphQuestion(
@@ -60,6 +64,7 @@ class ParagraphQuestionConstant {
       subTitle: "Số quả hai bạn có là:",
       unit: "quả",
       nums: [2, 3, 5],
+      note: "cả hai",
     ),
 
     ParagraphQuestion(
@@ -72,6 +77,7 @@ class ParagraphQuestionConstant {
       subTitle: "Số học sinh giỏi lớp 1B có là:",
       unit: "học sinh",
       nums: [3, 6, 9],
+      note: "nhiều hơn",
     ),
 
     ParagraphQuestion(
@@ -84,6 +90,7 @@ class ParagraphQuestionConstant {
       subTitle: "Số quả trứng cả hai ngày gà đẻ được là:",
       unit: "quả trứng",
       nums: [1, 2, 3],
+      note: "cho thêm",
     ),
 
     ParagraphQuestion(
@@ -96,6 +103,7 @@ class ParagraphQuestionConstant {
       subTitle: "Số quả cam Hà có tất cả là:",
       unit: "quả cam",
       nums: [2, 4, 6],
+      note: "cho thêm",
     ),
 
     ParagraphQuestion(
@@ -108,6 +116,7 @@ class ParagraphQuestionConstant {
       subTitle: "Số hình dán Phú có tất cả là:",
       unit: "hình dán",
       nums: [5, 5, 10],
+      note: "thưởng thêm",
     ),
 
     ParagraphQuestion(
@@ -120,20 +129,24 @@ class ParagraphQuestionConstant {
       subTitle: "Số con cá có tất cả trong bể là:",
       unit: "con cá",
       nums: [3, 4, 7],
+      note: "tất cả",
     ),
 
 //pham vi 100
+//20220404355824910336
+//38502356868
 
     ParagraphQuestion(
       title:
-          "Bể một có 9 con sao biển, bể hai có 5 con sao biển. Hỏi cả hai bể có tất cả bao nhiêu con sao biển?",
-      subTitle: "Số con sao biển có tất cả là:",
-      unit: "con",
-      nums: [9, 5, 14],
+          "Một bể có 9 con sao biển, người ta để thêm 5 con sao biển. Hỏi bể đó có tất cả bao nhiêu con sao biển?",
       image: [
         'assets/svg/starfish.svg',
         'assets/svg/starfish.svg',
       ],
+      subTitle: "Số con sao biển có tất cả là",
+      unit: "con",
+      nums: [9, 5, 14],
+      note: "thêm",
     ),
 
     ParagraphQuestion(
@@ -142,8 +155,9 @@ class ParagraphQuestionConstant {
       subTitle: "Số trứng nhà bà có tất cả là:",
       unit: "quả trứng",
       nums: [20, 9, 29],
+      note: "thêm",
       image: [
-        'assets/svg/egg_basket.svg',
+        'assets/svg/plusnew1.svg',
         'assets/svg/plus7a.svg',
       ],
     ),
@@ -153,6 +167,7 @@ class ParagraphQuestionConstant {
           "Mẹ hái được 9 quả xoài, chị hái được 9 quả xoài. Hỏi mẹ và chị hái được tất cả bao nhiêu quả xoài?",
       subTitle: "Số quả xoài mẹ và chị hái được là:",
       nums: [9, 9, 18],
+      note: "thêm",
       image: [
         'assets/svg/mango.svg',
         'assets/svg/mango.svg',
@@ -162,50 +177,54 @@ class ParagraphQuestionConstant {
 
     ParagraphQuestion(
       title:
-          "Một trang trại ngày đầu thu được 22 củ cà rốt , ngày hai thu được 23 củ cà rốt. Hỏi cả hai ngày trang trại đó thu được bao nhiêu củ cà rốt?",
-      subTitle: "Số bắp cải cả hai ngày trang trại thu được là:",
-      unit: "củ cà rốt",
-      nums: [22, 23, 45],
+          "Sân trường em có 42 cây xanh, nhà trường mới trồng thêm 23 cây xanh nữa. Hỏi sân trường có tất cả bao nhiêu cây xanh?",
       image: [
-        'assets/svg/plus14a.svg',
-        'assets/svg/plus14b.svg',
+        'assets/svg/plusnew2a.svg',
+        'assets/svg/plusnew2b.svg',
       ],
+      subTitle: "Số cây xanh sân trường có là",
+      unit: "cây",
+      nums: [42, 23, 65],
+      note: "thêm",
     ),
 
     ParagraphQuestion(
       title:
-          "Một nông trại ngày một gieo 40 hạt giống, ngày hai gieo nhiều hơn ngày một 8 hạt. Hỏi ngày hai nông trại đó gieo được tất cả bao nhiêu hạt giống?",
+          "Một nông trại ngày một gieo được 40 hạt giống, ngày hai gieo thêm được 8 hạt. Hỏi hai ngày nông trại đó gieo được bao nhiêu hạt giống?",
       image: [
-        'assets/svg/plus15a.svg',
+        'assets/svg/brown.svg',
         'assets/svg/plus15b.svg',
       ],
-      subTitle: "Ngày hai nông trại đó gieo được số hạt giống là:",
+      subTitle: "Số hạt giống gieo trong hai ngày là:",
       unit: "hạt",
       nums: [40, 8, 48],
+      note: "thêm",
     ),
 
     ParagraphQuestion(
       title:
-          "Trang có 31 cây bút chì, Phương hơn Trang 6 cây. Hỏi Phương có tất cả bao nhiêu cây bút chì?",
-      subTitle: "Số bút chì Phương có là:",
+          "Trang có 8 cây bút chì, Phương cho Trang thêm 8 cây. Hỏi Trang có bao nhiêu cây bút chì?",
+      subTitle: "Số bút chì Trang có là:",
       unit: "cây bút chì",
-      nums: [31, 6, 37],
+      nums: [8, 8, 16],
+      note: "thêm",
       image: [
-        'assets/svg/plus16a.svg',
+        'assets/svg/div45b.svg',
         'assets/svg/plus16b.svg',
       ],
     ),
 
     ParagraphQuestion(
       title:
-          "Một cửa hàng ngày một bán được 52 quả dâu, ngày hai bán nhiều hơn ngày một 12 quả. Hỏi ngày hai cửa hàng bán được bao nhiêu quả dâu?",
-      subTitle: "Số quả dâu ngày hai cửa hàng bán được là:",
-      unit: "quả dâu",
-      nums: [52, 12, 64],
+          "Một cửa hàng ngày một bán được 52 cái kẹo, ngày hai bán thêm được 12 cái. Hỏi cửa hàng bán được tất cả bao nhiêu cái kẹo?",
       image: [
-        'assets/svg/plus17a.svg',
-        'assets/svg/strawberry.svg',
+        'assets/svg/div59b.svg',
+        'assets/svg/minus1.svg',
       ],
+      subTitle: "Số kẹo cửa hàng bán được là",
+      unit: "cái kẹo",
+      nums: [52, 12, 64],
+      note: "thêm",
     ),
 
     ParagraphQuestion(
@@ -214,6 +233,7 @@ class ParagraphQuestionConstant {
       subTitle: "Mẹ có tất cả số cà chua là:",
       unit: "quả",
       nums: [7, 9, 16],
+      note: "thêm",
       image: [
         'assets/svg/tomato.svg',
         'assets/svg/tomato.svg',
@@ -223,9 +243,10 @@ class ParagraphQuestionConstant {
     ParagraphQuestion(
       title:
           " Ngày thứ nhất, mẹ bán được 35 cái bánh. Ngày thứ hai, mẹ bán được 24 cái bánh. Hỏi cả hai ngày mẹ bán được bao nhiêu cái bánh?",
-      subTitle: "Số cái bánh mẹ bán được trong hai ngày là:",
+      subTitle: "Số cái bánh mẹ bán được là:",
       unit: "Cái bánh",
       nums: [35, 24, 59],
+      note: "thêm",
       image: [
         'assets/svg/plus19a.svg',
         'assets/svg/plus19b.svg',
@@ -238,6 +259,7 @@ class ParagraphQuestionConstant {
       subTitle: "Số con vật trang trại có tất cả là:",
       unit: "con",
       nums: [8, 9, 17],
+      note: "và",
       image: [
         'assets/svg/chicken.svg',
         'assets/svg/pet.svg',
@@ -251,6 +273,7 @@ class ParagraphQuestionConstant {
       subTitle: "Số cái kẹo An còn là:",
       nums: [8, 2, 6],
       unit: "cái kẹo",
+      note: "cho",
       image: [
         'assets/svg/minus1.svg',
         'assets/svg/minus1.svg',
@@ -263,6 +286,7 @@ class ParagraphQuestionConstant {
       subTitle: "Số cái bút màu trong hộp còn là:",
       nums: [6, 1, 5],
       unit: "cái",
+      note: "lấy",
       image: [
         'assets/svg/minus2.svg',
         'assets/svg/minus2.svg',
@@ -275,6 +299,7 @@ class ParagraphQuestionConstant {
       subTitle: "Mẹ còn số quyển vở là:",
       nums: [10, 3, 7],
       unit: "quyển vở",
+      note: "cho",
       image: [
         'assets/svg/minus3.svg',
         'assets/svg/minus3.svg',
@@ -285,6 +310,7 @@ class ParagraphQuestionConstant {
       title: "Phú có 4 cái bút, Phú cho em 2 cái. Hỏi Phú còn mấy cái bút?",
       subTitle: "Số cái bút Phú còn là:",
       unit: "cái bút",
+      note: "cho",
       nums: [4, 2, 2],
       image: [
         'assets/svg/minus4.svg',
@@ -298,6 +324,7 @@ class ParagraphQuestionConstant {
       subTitle: "Số quả xoài chị còn lại là:",
       nums: [9, 4, 5],
       unit: "quả",
+      note: "cho",
       image: [
         'assets/svg/mango.svg',
         'assets/svg/mango.svg',
@@ -310,6 +337,7 @@ class ParagraphQuestionConstant {
       subTitle: "Số máy bay anh còn lại là:",
       nums: [6, 2, 4],
       unit: "máy bay",
+      note: "cho",
       image: [
         'assets/svg/minus6.svg',
         'assets/svg/minus6.svg',
@@ -321,6 +349,7 @@ class ParagraphQuestionConstant {
       subTitle: "Số quả táo bà còn là:",
       nums: [7, 2, 5],
       unit: "quả",
+      note: "cho",
       image: [
         'assets/svg/apple.svg',
         'assets/svg/apple.svg',
@@ -336,6 +365,7 @@ class ParagraphQuestionConstant {
       ],
       subTitle: "Số chong chóng Nhàn còn lại là:",
       unit: "chong chóng",
+      note: "cho",
       nums: [5, 2, 3],
     ),
 
@@ -347,6 +377,7 @@ class ParagraphQuestionConstant {
       ],
       subTitle: "Số cây kem Hà còn lại là:",
       unit: "cây kem",
+      note: "cho",
       nums: [9, 1, 8],
     ),
 
@@ -356,6 +387,7 @@ class ParagraphQuestionConstant {
       subTitle: "Số quả bóng Lan còn là:",
       nums: [6, 3, 3],
       unit: "quả",
+      note: "cho",
       image: [
         'assets/svg/balloon.svg',
         'assets/svg/balloon.svg',
@@ -367,8 +399,9 @@ class ParagraphQuestionConstant {
           "Giang có 35 quả trứng, Giang mang 20 quả biếu bà. Hỏi Giang còn bao nhiêu quả trứng?",
       subTitle: "Số quả trứng Giang còn lại là:",
       nums: [35, 20, 15],
+      note: "biếu",
       image: [
-        'assets/svg/egg_basket.svg',
+        'assets/svg/plusnew1.svg',
         'assets/svg/plus7a.svg',
       ],
       unit: "quả trứng",
@@ -376,9 +409,10 @@ class ParagraphQuestionConstant {
 
     ParagraphQuestion(
       title:
-          "Lam 14 cái kẹo, Lý có 11 cái kẹo. Hỏi Lam có nhiều hơn Lý mấy cái kẹo?",
-      subTitle: "Số cái kẹo Lam có nhiều hơn Lý là:",
+          "Lam có 14 cái kẹo, Lam cho Lý 11 cái kẹo. Hỏi Lam còn lại bao nhiêu cái kẹo?",
+      subTitle: "Số cái kẹo Lam còn là:",
       nums: [14, 11, 3],
+      note: "cho",
       image: [
         'assets/svg/minus12a.svg',
         'assets/svg/minus12b.svg',
@@ -390,24 +424,26 @@ class ParagraphQuestionConstant {
       title:
           "Cửa hàng có 36 con cá, cửa hàng đã bán 14 con. Hỏi cửa hàng còn lại bao nhiêu con cá?",
       image: [
-        'assets/svg/minus13a.svg',
+        'assets/svg/div410new.svg',
         'assets/svg/fish.svg',
       ],
       subTitle: "Số con cá cửa hàng còn lại là:",
-      unit: "con cá",
+      unit: "bán",
       nums: [36, 14, 22],
+      note: "cho",
     ),
 
     ParagraphQuestion(
       title:
-          "Cô An mua 15 chai nước, cô An đã uống 4 chai. Hỏi cô An còn lại bao nhiêu chai nước?",
+          "Cô An có 13 cái kẹo, cô An đã cho bé 3 cái. Hỏi cô An còn lại bao nhiêu cái kẹo?",
       image: [
-        'assets/svg/minus14a.svg',
-        'assets/svg/minus14b.svg',
+        'assets/svg/minus12a.svg',
+        'assets/svg/minus12b.svg',
       ],
-      subTitle: "Số chai nước cô An còn lại là:",
-      unit: "chai nước",
-      nums: [15, 4, 11],
+      subTitle: "Số cái kẹo cô An còn lại là:",
+      unit: "cái kẹo",
+      nums: [13, 3, 10],
+      note: "cho",
     ),
 
     ParagraphQuestion(
@@ -420,16 +456,18 @@ class ParagraphQuestionConstant {
       subTitle: "Số cây bố chưa trồng là:",
       unit: "cây",
       nums: [24, 4, 20],
+      note: "đã trồng",
     ),
 
     ParagraphQuestion(
       title:
-          "Bo hái được 55 quả dâu, Bo cho Bi 25 quả dâu. Hỏi Bo còn bao nhiêu quả dâu?",
-      subTitle: "Số quả dâu Bo còn là:",
+          "Bo mua 55 cái kẹo socola, Bo cho Bi 25 cái. Hỏi Bo còn bao nhiêu cái kẹo socola?",
+      subTitle: "Số cái kẹo Bo còn là:",
       nums: [55, 25, 30],
+      note: "cho",
       image: [
-        'assets/svg/plus17a.svg',
-        'assets/svg/strawberry.svg',
+        'assets/svg/minusnew1a.svg',
+        'assets/svg/minusnew1b.svg',
       ],
       unit: "quả",
     ),
@@ -444,15 +482,17 @@ class ParagraphQuestionConstant {
       subTitle: "Số cái bánh chị Lan còn lại là:",
       unit: "cái",
       nums: [17, 5, 12],
+      note: "cho",
     ),
 
     ParagraphQuestion(
       title:
-          "Ngày đầu cửa hàng bán được 66 quả trứng, ngày hai bán ít hơn 25 quả. Hỏi ngày hai cửa hàng bán được bao nhiêu quả trứng?",
-      subTitle: "Số quả trứng ngày hai cửa hàng bán được là:",
+          "Cửa hàng có 66 quả trứng, cửa hàng đã bán 25 quả. Hỏi cửa hàng còn lại bao nhiêu quả trứng?",
+      subTitle: "Số quả trứng cửa hàng còn lại là:",
       nums: [66, 25, 41],
+      note: "bán",
       image: [
-        'assets/svg/egg_basket.svg',
+        'assets/svg/plusnew1.svg',
         'assets/svg/plus7a.svg',
       ],
       unit: "quả",
@@ -463,6 +503,7 @@ class ParagraphQuestionConstant {
           "Tí làm 74 cái bánh, Tí tặng bạn 32 cái. Hỏi Tí còn lại bao nhiêu cái bánh?",
       subTitle: "Số cái bánh Tí còn lại là:",
       nums: [74, 32, 42],
+      note: "tặng",
       image: [
         'assets/svg/plus19a.svg',
         'assets/svg/plus19b.svg',
@@ -472,14 +513,15 @@ class ParagraphQuestionConstant {
 
     ParagraphQuestion(
       title:
-          "Bà thu hoạch được 25 củ cà rốt, bà cho em 12 củ. Hỏi bà còn lại bao nhiêu củ cà rốt?",
+          "Bà thu hoạch được 50 bông hoa, bà bán đi 20 bông hoa. Hỏi bà còn lại bao nhiêu bông hoa?",
       image: [
-        'assets/svg/plus14a.svg',
-        'assets/svg/plus14b.svg',
+        'assets/svg/minusnew3.svg',
+        'assets/svg/div22b.svg',
       ],
-      subTitle: "Số củ cà rốt bà còn lại là:",
+      subTitle: "Số bông hoa bà còn lại là:",
       unit: "củ",
-      nums: [25, 12, 13],
+      nums: [50, 20, 30],
+      note: "bán",
     ),
   ];
 
@@ -1053,21 +1095,21 @@ class ParagraphQuestionConstant {
   static List<ParagraphQuestion> listDiv4 = [
     ParagraphQuestion(
       title:
-          "Một thùng hàng có 24 củ cà rốt chia đều cho 4 giỏ. Hỏi mỗi giỏ được bao nhiêu củ cà rốt?",
+          "Nhà Hòa có 24 bông hoa, Hòa chia đều cho 4 bình hoa. Hỏi mỗi bình có bao nhiêu bông hoa?",
       image: [
-        'assets/svg/div27a.svg',
-        'assets/svg/plus14a.svg',
+        'assets/svg/div41new.svg',
+        'assets/svg/minusnew3.svg',
       ],
-      subTitle: "Số củ cà rốt ở mỗi giỏ là:",
-      unit: "củ",
+      subTitle: "Số bông hoa ở mỗi bình là:",
+      unit: "bông",
       nums: [24, 4, 6],
     ),
     ParagraphQuestion(
       title:
-          "Mẹ mua hộp bánh có 28 cái bánh, chia đều cho 4 đĩa. Hỏi mỗi đĩa có bao nhiêu quả cái bánh?",
+          "Mẹ mua hũ bánh có 28 cái bánh, chia đều cho 4 đĩa. Hỏi mỗi đĩa có bao nhiêu quả cái bánh?",
       image: [
         'assets/svg/div38a.svg',
-        'assets/svg/minus17a.svg',
+        'assets/svg/plus19a.svg',
       ],
       subTitle: "Số cái bánh ở mỗi đĩa là:",
       unit: "cái",
@@ -1075,12 +1117,12 @@ class ParagraphQuestionConstant {
     ),
     ParagraphQuestion(
       title:
-          "Một thùng có 16 chai nước chia đều cho 4 bàn. Hỏi mỗi bàn có bao nhiêu chai nước?",
+          "Trong nhà bếp có tô trái cây 16 quả, mẹ chia đều cho 4 đĩa. Hỏi đĩa có bao nhiêu quả trái cây?",
       image: [
-        'assets/svg/div43a.svg',
-        'assets/svg/div43b.svg',
+        'assets/svg/div38a.svg',
+        'assets/svg/div43new.svg',
       ],
-      subTitle: "Số chai nước ở mỗi bàn:",
+      subTitle: "Số quả mỗi đĩa có là:",
       unit: "chai",
       nums: [16, 4, 4],
     ),
@@ -1097,12 +1139,12 @@ class ParagraphQuestionConstant {
     ),
     ParagraphQuestion(
       title:
-          "Cô giáo có 40 cây bút, cô chia đều cho 4 bạn. Hỏi mỗi bạn có bao nhiêu cây bút?",
+          "Trong vườn nhà An có 40 quả táo, An hái chia đều cho 4 giỏ. Hỏi mỗi giỏ có bao nhiêu quả táo?",
       image: [
-        'assets/svg/div45a.svg',
-        'assets/svg/div45b.svg',
+        'assets/svg/div27a.svg',
+        'assets/svg/div45new.svg',
       ],
-      subTitle: "Số bút mỗi bạn có là:",
+      subTitle: "Số quả táo mỗi giỏ có là:",
       unit: "bút",
       nums: [40, 4, 10],
     ),
@@ -1144,16 +1186,16 @@ class ParagraphQuestionConstant {
           "Hoa có 20 cái áo, Hoa phải xếp đều vào 4 kệ. Hỏi mỗi kệ Hoa xếp bao nhiêu cái áo?",
       image: [
         'assets/svg/div44a.svg',
-        'assets/svg/div49b.svg',
+        'assets/svg/div49new.svg',
       ],
-      subTitle: "Số cái áo ở mỗi tủ là:",
+      subTitle: "Số cái áo ở mỗi kệ là:",
       unit: "cái áo",
       nums: [20, 4, 5],
     ),
     ParagraphQuestion(
       title: "Có 12 con cá chia đều cho 4 bể. Hỏi mỗi bể có bao nhiêu con cá?",
       image: [
-        'assets/svg/aquarium.svg',
+        'assets/svg/div410new.svg',
         'assets/svg/fish.svg',
       ],
       subTitle: "Số cá mỗi bể có là:",
@@ -1165,24 +1207,24 @@ class ParagraphQuestionConstant {
   static List<ParagraphQuestion> listDiv5 = [
     ParagraphQuestion(
       title:
-          "Cô giáo có 20 cây bút thưởng đều cho 5 bạn. Hỏi mỗi bạn được thưởng bao nhiêu cây bút?",
+          "An có 20 bông hoa, chia đều cho 5 bình hoa. Hỏi mỗi bình hoa có bao nhiêu bông hoa?",
       image: [
-        'assets/svg/div45a.svg',
-        'assets/svg/div45b.svg',
+        'assets/svg/div41new.svg',
+        'assets/svg/minusnew3.svg',
       ],
-      subTitle: "Số bút mỗi bạn được thưởng là:",
-      unit: "bút",
+      subTitle: "Số bông hoa mỗi bình có là:",
+      unit: "bông",
       nums: [20, 5, 4],
     ),
     ParagraphQuestion(
       title:
-          "Lan mua thùng nước gồm có 30 chai nước, Lan chia đều cho 5 bàn. Hỏi mỗi bàn có bao nhiêu chai nước?",
+          "Lan có tô trái cây gồm 30 quả, Lan chia đều cho 5 bạn. Hỏi mỗi bạn được bao nhiêu quả?",
       image: [
-        'assets/svg/div43a.svg',
-        'assets/svg/div43b.svg',
+        'assets/svg/div52new.svg',
+        'assets/svg/div43new.svg',
       ],
-      subTitle: "Số chai nước mỗi bàn có là:",
-      unit: "chai nước",
+      subTitle: "Số quả mỗi bạn được là:",
+      unit: "quả",
       nums: [30, 5, 6],
     ),
     ParagraphQuestion(
@@ -1198,20 +1240,20 @@ class ParagraphQuestionConstant {
     ),
     ParagraphQuestion(
       title:
-          "Mẹ chia đều 50 quả trứng gà vào 5 giỏ. Hỏi mỗi giỏ có bao nhiêu quả trứng gà?",
+          "Ba mua 50 mầm cây trồng đều vào 5 chậu. Hỏi mỗi chậu có bao nhiêu mầm cây?",
       image: [
-        'assets/svg/div27a.svg',
-        'assets/svg/egg_basket.svg',
+        'assets/svg/div48a.svg',
+        'assets/svg/div48b.svg',
       ],
-      subTitle: "Số quả trứng gà trong mỗi giỏ là:",
-      unit: "quả trứng",
+      subTitle: "Số mầm cây ở mỗi chậu là:",
+      unit: "mầm cây",
       nums: [50, 5, 10],
     ),
     ParagraphQuestion(
       title:
           "Hũ bánh có 25 cái bánh, chia đều cho 5 bạn. Hỏi mỗi bạn được bao nhiêu cái bánh?",
       image: [
-        'assets/svg/div45a.svg',
+        'assets/svg/div52new.svg',
         'assets/svg/plus19a.svg',
       ],
       subTitle: "Số cái bánh mỗi bạn được là:",
@@ -1222,8 +1264,8 @@ class ParagraphQuestionConstant {
       title:
           "Có 20 bông hoa chia đều cho 5 bình. Hỏi mỗi Bình được bao nhiêu bông hoa?",
       image: [
-        'assets/svg/div56a.svg',
-        'assets/svg/div56b.svg',
+        'assets/svg/div41new.svg',
+        'assets/svg/minusnew3.svg',
       ],
       subTitle: "Số bông hoa ở mỗi bình là:",
       unit: "bông hoa",
@@ -1233,7 +1275,7 @@ class ParagraphQuestionConstant {
       title:
           "Nhà Hùng có 5 bể cá. Bố mua cho Hùng 10 con cá để đều vào 5 bể. Hỏi mỗi bể có bao nhiêu con cá?",
       image: [
-        'assets/svg/aquarium.svg',
+        'assets/svg/div410new.svg',
         'assets/svg/fish.svg',
       ],
       subTitle: "Số con cá ở mỗi bể là:",
@@ -1242,35 +1284,35 @@ class ParagraphQuestionConstant {
     ),
     ParagraphQuestion(
       title:
-          "Mẹ mua thùng trái cây có 45 quả, mẹ chia đều cho 5 giỏ. Hỏi mỗi giỏ có bao nhiêu quả trái cây?",
+          "Tủ sách nhà Tuấn có 45 quyển sách, Tuấn xếp đều vào 5 kệ. Hỏi mỗi kệ có bao nhiêu quyên sách?",
       image: [
-        'assets/svg/div27a.svg',
-        'assets/svg/div58b.svg',
+        'assets/svg/div44a.svg',
+        'assets/svg/div44b.svg',
       ],
-      subTitle: "Số quả trái cây mỗi giỏ có là:",
-      unit: "quả",
+      subTitle: "Số quyển sách mỗi kệ có là:",
+      unit: "quyển sách",
       nums: [45, 5, 9],
     ),
     ParagraphQuestion(
       title:
-          "Hùng có 30 viên kẹo, Hùng chia đều cho 5 bạn. Hỏi Hùng cho mỗi bạn được bao nhiêu viên kẹo?",
+          "Hùng có 30 cái cây, Hùng trồng đều ở 5 mảnh đất. Hỏi mỗi mảnh đất Hùng trồng bao nhiêu cây?",
       image: [
-        'assets/svg/div45a.svg',
-        'assets/svg/div59b.svg',
+        'assets/svg/div59anew.svg',
+        'assets/svg/div59bnew.svg',
       ],
-      subTitle: "Số viên kẹo mỗi bạn được là:",
-      unit: "viên",
+      subTitle: "Số cây ở mỗi mảnh đất là:",
+      unit: "cây",
       nums: [30, 5, 6],
     ),
     ParagraphQuestion(
       title:
-          "Thùng dâu tây có 25 quả xếp đều vào 5 hộp. Hỏi mỗi hộp có bao nhiêu quả dâu tây?",
+          "Thùng nước có 25 lít nước được chia đều cho 5 chai. Hỏi mỗi chai được bao nhiêu lít nước?",
       image: [
-        'assets/svg/div510a.svg',
-        'assets/svg/plus17a.svg',
+        'assets/svg/div510anew.svg',
+        'assets/svg/div510bnew.svg',
       ],
-      subTitle: "Số quả dâu tây ở mỗi hộp là:",
-      unit: "quả",
+      subTitle: "Số lít nước ở mỗi chai là:",
+      unit: "lít",
       nums: [25, 5, 5],
     ),
   ];
