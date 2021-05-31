@@ -1,4 +1,3 @@
-import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/smart_management.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
@@ -19,12 +18,6 @@ void main() async {
   Hive.init(appDirectory.path);
 
   runApp(MyApp());
-  // runApp(
-  //   DevicePreview(
-  //     enabled: true,
-  //     builder: (context) => MyApp(), // Wrap your app
-  //   ),
-  // );
 }
 
 class MyApp extends StatelessWidget {

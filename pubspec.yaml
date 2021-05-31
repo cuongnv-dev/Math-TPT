@@ -12,7 +12,6 @@ dependencies:
   audioplayers: ^0.15.0
   cached_network_image: ^2.5.0
   cupertino_icons: ^1.0.0
-  device_preview: ^0.5.5
   dotted_border: ^1.0.7
   equatable: ^1.2.5
   flare_flutter: ^2.0.6
