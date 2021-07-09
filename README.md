@@ -1,7 +1,8 @@
 <p align="center"><img src="https://screenshot-apps.s3.ap-southeast-1.amazonaws.com/IMG_0472.PNG" alt="logo" width="414px"></p>
 
+<p align="center">Feel free to give me a star <img src="https://media.giphy.com/media/H70VAWVaZ8xeaqwmsx/giphy.gif" width="30"></img><p>
 
-<h2>Math learning game for deaf children!</h2>
+<h2>Math learning game for deaf children!</h2> 
 
   - This project is a math learning game for kids from **3** to **12** years old. Includes addition, subtraction, multiplication, division and natural numbers with different difficulty levels and lively images.
   - The idea of a group of preschool pedagogical students, Ho Chi Minh City Pedagogy University
@@ -12,6 +13,8 @@
   - Dart
   - Flutter
   - GetX
+
+
 
 ## Screenshots
 <img src="/screenshots/IMG_0479.PNG" height="400px"/>   <img src="/screenshots/IMG_0480.PNG" height="400px"/>   <img src="/screenshots/IMG_0481.PNG" height="400px"/>
