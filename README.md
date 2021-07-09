@@ -1,16 +1,16 @@
-# math
+<p align="center"><img src="https://screenshot-apps.s3.ap-southeast-1.amazonaws.com/IMG_0472.PNG" alt="logo" width="414px"></p>
 
-A new Flutter project.
 
-## Getting Started
+<h2>Math learning game for deaf children!</h2>
 
-This project is a starting point for a Flutter application.
+  - This project is a math learning game for kids from **3** to **12** years old. Includes addition, subtraction, multiplication, division and natural numbers with different difficulty levels and lively images.
+  - The idea of a group of preschool pedagogical students, Ho Chi Minh City Pedagogy University
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Technologies
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+  - Dart
+  - Flutter
+  - GetX
+
+
